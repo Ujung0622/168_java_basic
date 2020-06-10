@@ -33,7 +33,7 @@ public void sum () {
 	this.sum = this.phone + this.tv + this.com;
 }
 public void printStates() {
-System.out.println(name +"´Ô²²¼­ °áÁ¦ÇÏ½Ç ±İ¾×Àº ÃÑ " + sum +"¸¸¿ø ÀÔ´Ï´Ù.");
+System.out.println(name +"ë‹˜ê»˜ì„œ ê²°ì œí•˜ì‹¤ ì´ ê¸ˆì•¡ì€  " + sum +"ë§Œì› ì…ë‹ˆë‹¤.");
 }
 
 }

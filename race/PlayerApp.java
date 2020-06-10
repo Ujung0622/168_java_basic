@@ -8,9 +8,9 @@ public class PlayerApp {
 		
 		for (i = 0; i < players.length; i++) {
 			Player player = new Player();
-			System.out.print("¼±¼ö ÀÌ¸§: ");
+			System.out.print("ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½: ");
 			player.setName(scan.next());
-			System.out.print("±â·Ï: ");
+			System.out.print("ï¿½ï¿½ï¿½: ");
 			player.setRec(scan.nextInt());
 			players[i] = player;
 		}
@@ -19,46 +19,46 @@ public class PlayerApp {
 			players[i].printStates();
 		}
 		
-		//·©Å· ±¸ÇÏ±â 
+		//ï¿½ï¿½Å· ï¿½ï¿½ï¿½Ï±ï¿½ 
 		Player[] ranking = new Player[3];
 		if (players[0].getRec() < players[1].getRec()) {
 			
 			if (players[0].getRec() < players[2].getRec()) {
 				if (players[1].getRec() < players[2].getRec()) {
-					System.out.println("±Ý: " + players[0].getName() 
-							+ ", Àº: " + players[1].getName()
-							+ ", µ¿: " + players[2].getName());
+					System.out.println("ï¿½ï¿½: " + players[0].getName() 
+							+ ", ï¿½ï¿½: " + players[1].getName()
+							+ ", ï¿½ï¿½: " + players[2].getName());
 				} else {
-						System.out.println("±Ý: " + players[0].getName() 
-							+ ", Àº: " + players[2].getName()
-							+ ", µ¿: " + players[1].getName());
+						System.out.println("ï¿½ï¿½: " + players[0].getName() 
+							+ ", ï¿½ï¿½: " + players[2].getName()
+							+ ", ï¿½ï¿½: " + players[1].getName());
 					}
 			} 
 		} else if (players[1].getRec() < players[2].getRec()) {
 			if (players[2].getRec() < players[0].getRec()) {
-				System.out.println("±Ý: " + players[1].getName() 
-						+ ", Àº: " + players[2].getName()
-						+ ", µ¿: " + players[0].getName());
+				System.out.println("ê¸ˆ: " + players[1].getName() 
+						+ ", ì€: " + players[2].getName()
+						+ ", ë™: " + players[0].getName());
 			} else if (players[2].getRec() < players[1].getRec()) {
-			System.out.println("±Ý: " + players[2].getName() 
-					+ ", Àº: " + players[1].getName()
-					+ ", µ¿: " + players[0].getName());
+			System.out.println("ê¸ˆ: " + players[2].getName() 
+					+ ", ì€: " + players[1].getName()
+					+ ", ë™: " + players[0].getName());
 			} else {
-			System.out.println("±Ý: " + players[1].getName() 
-					+ ", Àº: " + players[0].getName()
-					+ ", µ¿: " + players[2].getName());
+			System.out.println("ê¸ˆ: " + players[1].getName() 
+					+ ", ì€: " + players[0].getName()
+					+ ", ë™: " + players[2].getName());
 			}
 		} else { 
-			System.out.println("±Ý: " + players[2].getName() 
-				+ ", Àº: " + players[1].getName()
-				+ ", µ¿: " + players[0].getName());
+			System.out.println("ê¸ˆ: " + players[2].getName() 
+				+ ", ì€: " + players[1].getName()
+				+ ", ë™: " + players[0].getName());
 		}
 	}
 }
 
 /**
 System.out.println(players[0].getName() 
-+"ÀÌ " + players[1].getName() + " º¸´Ù ºü¸£´Ù."); 
++"ï¿½ï¿½ " + players[1].getName() + " ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½."); 
 **/
 
 

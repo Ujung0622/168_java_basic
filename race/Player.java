@@ -20,7 +20,7 @@ public class Player {
 	}
 	
 	public void printStates() {
-	System.out.println( name + " ¼±¼öÀÇ ±â·ÏÀº " + rec + "ÃÊ ÀÔ´Ï´Ù.");
+	System.out.println( name + "ì„ ìˆ˜ì˜ ê¸°ë¡ì€ " + rec + "ì´ˆ ì…ë‹ˆë‹¤.");
 	}
 	
 }

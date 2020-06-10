@@ -8,9 +8,9 @@ public class PlayerApp {
 		
 		for (i = 0; i < players.length; i++) {
 			Player player = new Player();
-			System.out.print("���� �̸�: ");
+			System.out.print("선수 이름: ");
 			player.setName(scan.next());
-			System.out.print("���: ");
+			System.out.print("기록: ");
 			player.setRec(scan.nextInt());
 			players[i] = player;
 		}
@@ -19,47 +19,17 @@ public class PlayerApp {
 			players[i].printStates();
 		}
 		
-		//��ŷ ���ϱ� 
+	
 		Player[] ranking = new Player[3];
 		if (players[0].getRec() < players[1].getRec()) {
 			
 			if (players[0].getRec() < players[2].getRec()) {
-				if (players[1].getRec() < players[2].getRec()) {
-					System.out.println("��: " + players[0].getName() 
-							+ ", ��: " + players[1].getName()
-							+ ", ��: " + players[2].getName());
-				} else {
-						System.out.println("��: " + players[0].getName() 
-							+ ", ��: " + players[2].getName()
-							+ ", ��: " + players[1].getName());
-					}
-			} 
-		} else if (players[1].getRec() < players[2].getRec()) {
-			if (players[2].getRec() < players[0].getRec()) {
-				System.out.println("금: " + players[1].getName() 
-						+ ", 은: " + players[2].getName()
-						+ ", 동: " + players[0].getName());
-			} else if (players[2].getRec() < players[1].getRec()) {
-			System.out.println("금: " + players[2].getName() 
-					+ ", 은: " + players[1].getName()
-					+ ", 동: " + players[0].getName());
-			} else {
-			System.out.println("금: " + players[1].getName() 
-					+ ", 은: " + players[0].getName()
-					+ ", 동: " + players[2].getName());
+				System.out.println("1등은 " + players[0].getName());
 			}
+		} else if (players[1].getRec() < players[2].getRec()) {
+			System.out.println("1등은 " + players[1].getName());
 		} else { 
-			System.out.println("금: " + players[2].getName() 
-				+ ", 은: " + players[1].getName()
-				+ ", 동: " + players[0].getName());
+			System.out.println("1등은 " + players[2].getName());
 		}
 	}
 }
-
-/**
-System.out.println(players[0].getName() 
-+"�� " + players[1].getName() + " ���� ������."); 
-**/
-
-
-

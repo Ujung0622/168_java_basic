@@ -19,23 +19,39 @@ public class PlayerApp {
 			players[i].printStates();
 		}
 		
+		//랭킹 구하기 
 		Player[] ranking = new Player[3];
 		if (players[0].getRec() < players[1].getRec()) {
+			
 			if (players[0].getRec() < players[2].getRec()) {
 				if (players[1].getRec() < players[2].getRec()) {
 					System.out.println("금: " + players[0].getName() 
 							+ ", 은: " + players[1].getName()
 							+ ", 동: " + players[2].getName());
-				} 
+				} else {
+						System.out.println("금: " + players[0].getName() 
+							+ ", 은: " + players[2].getName()
+							+ ", 동: " + players[1].getName());
+					}
 			} 
-		} else if (players[2].getRec() < players[0].getRec()) { 
+		} else if (players[1].getRec() < players[2].getRec()) {
+			if (players[2].getRec() < players[0].getRec()) {
+				System.out.println("금: " + players[1].getName() 
+						+ ", 은: " + players[2].getName()
+						+ ", 동: " + players[0].getName());
+			} else if (players[2].getRec() < players[1].getRec()) {
 			System.out.println("금: " + players[2].getName() 
+					+ ", 은: " + players[1].getName()
+					+ ", 동: " + players[0].getName());
+			} else {
+			System.out.println("금: " + players[1].getName() 
 					+ ", 은: " + players[0].getName()
-					+ ", 동: " + players[1].getName());
+					+ ", 동: " + players[2].getName());
+			}
 		} else { 
-			System.out.println("금: " + players[0].getName() 
-				+ ", 은: " + players[2].getName()
-				+ ", 동: " + players[1].getName());
+			System.out.println("금: " + players[2].getName() 
+				+ ", 은: " + players[1].getName()
+				+ ", 동: " + players[0].getName());
 		}
 	}
 }

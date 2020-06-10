@@ -18,9 +18,9 @@ public class StudentApp {
 			student.setEng(scan.nextInt());
 			System.out.println("¼öÇĞ: ");
 			student.setMath(scan.nextInt());
-			
 			student.sum();
 			student.avg();
+			
 			students[i] = student;
 		}
 		

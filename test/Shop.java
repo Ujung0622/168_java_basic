@@ -32,8 +32,8 @@ public int getCom () {
 public void sum () {
 	this.sum = this.phone + this.tv + this.com;
 }
-void printStates() {
-System.out.println(name +"께서 결제하실 금액은 총 " + sum +"만원 입니다.");
+public void printStates() {
+System.out.println(name +"님께서 결제하실 금액은 총 " + sum +"만원 입니다.");
 }
 
 }

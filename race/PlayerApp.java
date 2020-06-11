@@ -19,17 +19,16 @@ public class PlayerApp {
 			players[i].printStates();
 		}
 		
-	
+		
 		Player[] ranking = new Player[3];
-		if (players[0].getRec() < players[1].getRec()) {
-			
-			if (players[0].getRec() < players[2].getRec()) {
-				System.out.println("1등은 " + players[0].getName());
-			}
+		if (players[0].getRec() < players[1].getRec() 
+				&& players[0].getRec() < players[2].getRec()) {
+				ranking[0]=players[0];
 		} else if (players[1].getRec() < players[2].getRec()) {
-			System.out.println("1등은 " + players[1].getName());
+					ranking[0]=players[1];
 		} else { 
-			System.out.println("1등은 " + players[2].getName());
-		}
+				ranking[0]=players[2];
+	 		}
+		System.out.println("1등은 " + ranking[0].getName() +"!");
 	}
 }

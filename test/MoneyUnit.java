@@ -43,8 +43,7 @@ public class MoneyUnit {
 			money.setPrice(scan.nextInt());
 			for (int i = 0; i < unit.length; i++) {
 				calc[i] =money.getPrice()/unit[i];
-			money.getPrice() = money.getPrice() % unit[i];
-	
+			money.setPrice(money.getPrice() % unit[i]);
 			}
 			for (int i = 0; i < unit.length; i++) {
 				System.out.printf("%d원\t%d개\n", unit[i], calc[i]);

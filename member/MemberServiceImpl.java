@@ -2,45 +2,94 @@ package member;
 
 public class MemberServiceImpl implements MemberService {
 	private Member[] members;
-	// Member[] members = new Member [3] 
-	// => 돌아가긴 하지만 쪼개면 공간을 나눠서 주면 필드에서 공유할 수 있게 된다.
-	// 클래스 변수로 만들려면 static Member[] members = new Member [3] 
-	// 이게 그럼 메인클래스에 떠버려서 보안이 취약.
-	private int idx = 0;
-	// Ctrl + Space 이렇게 뜬다. 
-	// 이것이 생성자.
-	
+	private int count;
+
 	public MemberServiceImpl() {
-		// TODO Auto-generated constructor stub
-	members = new Member[3];
-	idx = 0;
+		members = new Member[3];
+		count = 0;
 	}
+
 	@Override
 	public void join(Member member) {
-		System.out.println("App 에서 넘어온 회원 정보 ");
-		System.out.println(member.toString());
-		members[idx] = member;
-		idx++;
-		System.out.println("증가된 인덱스 값: " + idx);
-		System.out.println("배열에 저장된 회원정보");
-		for (int i = 0; i < members.length; i++) {
-			if (members[i] != null) {
-				System.out.println(members[i]);
-			} else {
-				System.out.println("회원 정보가 없어요.");
+		members[count] = member;
+		count++;
+	}
+
+	@Override
+	public String login(Member member) {
+		String result = "FAIL";
+		for (int i = 0; i < count; i++) {
+			if (member.getUserid().equals(members[i].getUserid())
+					&& member.getPassword().equals(members[i].getPassword())) {
+				result = "SUCCESS";
+				break;
 			}
 		}
+		return result;
 	}
 
 	@Override
-	public void login() {
-		// TODO Auto-generated method stub
-
+	public String idFind(Member member) {
+		String result = "중복없음";
+		for (int i = 0; i < count; i++) {
+			if (member.getUserid().equals(members[i].getUserid())) {
+				result = "중복된 아이디";
+			}
+		}
+		return result;
 	}
+
+	@Override
+	public String withdrawal(Member member) {
+		String result = "탈퇴되었습니다.";
+		for (int i = 0; i < count; i++) {
+			if (member.getUserid().equals(members[i].getUserid())
+					&& member.getPassword().equals(members[i].getPassword())) {
+				for (int j = 0; j < count; j++) {
+					members[i] = members[count - 1];
+
+				}
+				members[count - 1] = null;
+				count--;
+			}
+		}
+		return result;
+	}
+
+	@Override
+	public String changePassword(Member member) {
+		String result = "비밀번호가 틀렸습니다.";
+		String changePassword;
+		for (int i = 0; i < count; i++) {
+			if (member.getPassword().equals(members[i].getPassword())) {
+				System.out.println("아이디: " + members[i].getUserid());
+				result = member.getchangePassword() + "로 변경되었습니다.";
+				changePassword = member.getchangePassword();
+				members[i].setPassword(member.getchangePassword());
+			}
+		}
+		return result;
+	}
+
 	@Override
 	public Member[] list() {
-		// TODO Auto-generated method stub
+// TODO Auto-generated method stub
 		return members;
 	}
 
+	@Override
+	public int count() {
+		return this.count;
+	}
+
+	@Override
+	public Member[] nameFind(Member member) {
+		Member[] namE=null;
+		for (int i = 0; i < count; i++) {
+			if (member.getName().equals(members[i].getName())) {
+				namE[i]=members[i];
+			}
+		}
+		return namE;
+	}
 }

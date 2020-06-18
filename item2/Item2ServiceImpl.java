@@ -9,7 +9,7 @@ public class Item2ServiceImpl implements Item2Service {
 	}
 
 	@Override
-	public Item2[] list(Item2 item2) {
+	public Item2[] list() {
 		// TODO Auto-generated method stub
 		return null;
 	}

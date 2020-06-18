@@ -5,13 +5,13 @@ import java.util.Scanner;
 public class ItemApp {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-		Item item = null;
+		Item item = null; //?
 		ItemService itemService = new ItemServiceImpl();
 		while (true) {
 			System.out.println("0 EXIT, 1 ADD, 2 LIST");
 			switch (scan.nextInt()) {
 			case 0:
-				System.out.println("종료");
+				System.out.println("EXIT");
 				return;
 			case 1:
 				System.out.println("ADD");
@@ -20,13 +20,13 @@ public class ItemApp {
 				item.setName(scan.next());
 				System.out.println("가격: ");
 				item.setPrice(scan.nextInt());
-				itemService.addCart(item);
+				itemService.addCart(item); //?
 				break;
 			case 2:
 				System.out.println("LIST");
 				Item[] list = itemService.list();
 				for (int i = 0; i < list.length; i++) {
-					System.out.println(list[i].toString());
+					System.out.println(list[i]);
 				}
 				break;
 			default:

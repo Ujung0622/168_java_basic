@@ -84,12 +84,17 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public Member[] nameFind(Member member) {
-		Member[] namE=null;
-		for (int i = 0; i < count; i++) {
+		int cnt = 0; //동명이인의 수 
+		Member[] temp = new Member[cnt];
+		for(int i=0;i<count;i++) {
 			if (member.getName().equals(members[i].getName())) {
-				namE[i]=members[i];
+				temp[cnt].setUserid(members[i].getUserid());
+				cnt++;
 			}
 		}
-		return namE;
+		for(int i=0; i<cnt;i++) {
+		System.out.println(temp[cnt]);
+		}
+		return temp;
 	}
 }

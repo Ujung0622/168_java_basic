@@ -79,14 +79,11 @@ public class MemberApp {
 				break;
 			case 8: //8.이름검색
 				member = new Member();
-				System.out.println("이름검색");
+				System.out.println("이름 검색");
 				System.out.println("검색할 이름을 입력하세요.");
-				member.setName(scanner.next());
-				Member[] namE = memberService.nameFind(member);
-				count = memberService.count();
-				for(int i=0;i<count;i++) {
-				System.out.println(namE[i]);
-				}
+	
+			//	Member[] temp = memberService.nameFind(scanner.next());
+				
 				break;
 			case 9: //9.전체 회원수
 				System.out.println("전체 회원수");

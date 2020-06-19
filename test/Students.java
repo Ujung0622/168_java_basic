@@ -1,6 +1,6 @@
 package test;
 
-public class Student {
+public class Students {
 
 	private String name;
 	private int kor, eng, math;
@@ -38,7 +38,7 @@ public class Student {
 	}
 	
 	void printStates() {
-		System.out.println("ÀÌ¸§: " + name + ", ±¹¾î: " + kor + ", ¿µ¾î: " + eng + ", ¼öÇÐ: " + math);
-		System.out.println("ÃÑÁ¡: " + sum + ", Æò±Õ: " + avg);
+		System.out.println("ï¿½Ì¸ï¿½: " + name + ", ï¿½ï¿½ï¿½ï¿½: " + kor + ", ï¿½ï¿½ï¿½ï¿½: " + eng + ", ï¿½ï¿½ï¿½ï¿½: " + math);
+		System.out.println("ï¿½ï¿½ï¿½ï¿½: " + sum + ", ï¿½ï¿½ï¿½: " + avg);
 	}
 }

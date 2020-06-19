@@ -5,11 +5,11 @@ import java.util.Scanner;
 public class StudentApp {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-		Student[] students = new Student[2];
+		Students[] students = new Students[2];
 		int i;
 		
 		for (i = 0; i < students.length; i++) {
-			Student student = new Student();
+			Students student = new Students();
 			System.out.println("이름: ");
 			student.setName(scan.next());
 			System.out.println("국어 점수: ");
